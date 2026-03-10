@@ -1,17 +1,32 @@
 let score = 0;
 let detected = false;
 
+function saveUser(){
+
+let name = document.getElementById("username").value;
+
+if(name===""){
+alert("Please enter your name");
+return;
+}
+
+localStorage.setItem("username",name);
+
+window.location.href = "detect.html";
+
+}
+
 function detectWaste(){
 
 let file = document.getElementById("imageUpload").files[0];
 
 if(!file){
-alert("Please upload an image first");
+alert("Upload image first");
 return;
 }
 
 if(detected){
-alert("Image already detected. Upload a new image.");
+alert("Already detected. Upload new image.");
 return;
 }
 
@@ -35,6 +50,7 @@ document.getElementById("score").innerText =
 detected = true;
 
 }
+
 function resetDetect(){
 detected = false;
 }
