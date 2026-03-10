@@ -40,3 +40,6 @@ document.getElementById("result").innerHTML =
 };
 
 }
+function detectWaste(){
+alert("Button working");
+}
