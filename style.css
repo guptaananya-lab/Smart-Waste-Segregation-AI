@@ -1,24 +1,31 @@
 body{
-background:#0b1d3a;
+
+background:#0b1f3a;
 color:white;
 text-align:center;
 font-family:Arial;
+
 }
 
 button{
-background:#1e3a8a;
+
+background:#1d4ed8;
 color:white;
-padding:10px 20px;
+padding:12px 20px;
 border:none;
 border-radius:6px;
+
 }
 
 button:hover{
+
 background:#3b82f6;
+
 }
 
 a{
+
 color:#60a5fa;
 margin:10px;
-display:inline-block;
+
 }
