@@ -35,3 +35,6 @@ document.getElementById("score").innerText =
 detected = true;
 
 }
+function resetDetect(){
+detected = false;
+}
