@@ -2,20 +2,21 @@ let score = 0;
 
 function detectWaste(){
 
-let wasteTypes = [
+let wasteTypes=[
 "Plastic Waste",
 "Metal Waste",
-"Recyclable Waste",
-"Organic Waste"
+"Organic Waste",
+"Recyclable Waste"
 ];
 
-let randomWaste = wasteTypes[Math.floor(Math.random()*wasteTypes.length)];
+let result=wasteTypes[Math.floor(Math.random()*wasteTypes.length)];
 
-score = score + 10;
+score+=10;
 
-document.getElementById("result").innerText =
-"Detected: " + randomWaste;
+document.getElementById("result").innerText=
+"Detected: "+result;
 
-document.getElementById("points").innerText =
-"Points: " + score;
+document.getElementById("score").innerText=
+"Points: "+score;
+
 }
