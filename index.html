@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Smart Waste Segregation</title>
-<link rel="stylesheet" href="style.css">
-</head>
+function saveUser(){
 
-<body>
+let name = document.getElementById("username").value;
 
-<h1>Smart Waste Segregation System</h1>
+if(name==""){
+alert("Please enter your name");
+return;
+}
 
-<div class="container">
+localStorage.setItem("username",name);
 
-<div class="card">
-<h2>Reduce Pollution</h2>
-<p>Proper waste segregation helps reduce environmental pollution.</p>
-</div>
+window.location.href="detect.html";
 
-<div class="card">
-<h2>Promote Recycling</h2>
-<p>Separating waste allows recyclable materials to be reused.</p>
-</div>
-
-<div class="card">
-<h2>Protect Nature</h2>
-<p>Waste management keeps our planet clean and healthy.</p>
-</div>
-
-</div>
-
-<br>
-
-<a href="user.html">
-<button>Start</button>
-</a>
-
-</body>
-</html>
+}
