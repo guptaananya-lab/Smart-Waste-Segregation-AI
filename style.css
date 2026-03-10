@@ -2,18 +2,37 @@ body{
 
 background:#0b1f3a;
 color:white;
-text-align:center;
 font-family:Arial;
+text-align:center;
+
+}
+
+.container{
+
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+
+}
+
+.card{
+
+background:#132a4f;
+padding:20px;
+border-radius:10px;
+width:200px;
 
 }
 
 button{
 
-background:#1d4ed8;
+background:#2563eb;
 color:white;
-padding:12px 20px;
+padding:10px 20px;
 border:none;
 border-radius:6px;
+font-size:16px;
 
 }
 
@@ -23,9 +42,8 @@ background:#3b82f6;
 
 }
 
-a{
+input{
 
-color:#60a5fa;
-margin:10px;
+padding:10px;
 
 }
