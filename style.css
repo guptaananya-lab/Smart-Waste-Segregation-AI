@@ -27,4 +27,9 @@ border:none;
 color:white;
 font-size:16px;
 cursor:pointer;
+border-radius:6px;
+}
+
+button:hover{
+background:#16a34a;
 }
