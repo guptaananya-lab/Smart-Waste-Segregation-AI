@@ -1,22 +1,42 @@
-function detectWaste(){
+const URL = "https://teachablemachine.withgoogle.com/models/pFSaUVG0q/";
+
+let model;
+
+async function loadModel(){
+model = await tmImage.load(URL + "model.json", URL + "metadata.json");
+}
+
+loadModel();
+
+async function detectWaste(){
 
 const input = document.getElementById("imageUpload");
 
 if(input.files.length === 0){
-document.getElementById("result").innerHTML="Please upload an image";
+document.getElementById("result").innerHTML="Please upload image";
 return;
 }
 
-const wastes = [
-"Plastic Waste → Blue Recycling Bin",
-"Organic Waste → Green Bin",
-"Metal Waste → Yellow Bin",
-"Paper Waste → White Bin"
-];
+const file = input.files[0];
 
-const result = wastes[Math.floor(Math.random()*wastes.length)];
+const img = new Image();
+img.src = window.URL.createObjectURL(file);
+
+img.onload = async function(){
+
+const prediction = await model.predict(img);
+
+let highest = prediction[0];
+
+for(let i=1;i<prediction.length;i++){
+if(prediction[i].probability > highest.probability){
+highest = prediction[i];
+}
+}
 
 document.getElementById("result").innerHTML =
-"Detected Waste: " + result;
+"Detected Waste: " + highest.className;
+
+}
 
 }
