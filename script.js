@@ -1,47 +1,37 @@
 let score = 0;
-
-function saveUser(){
-
-let name=document.getElementById("username").value;
-
-if(name==""){
-alert("Please enter name");
-return;
-}
-
-localStorage.setItem("username",name);
-
-window.location.href="detect.html";
-
-}
+let detected = false;
 
 function detectWaste(){
 
-let file=document.getElementById("imageUpload").files[0];
+let file = document.getElementById("imageUpload").files[0];
 
 if(!file){
-
-alert("Upload image first");
-
+alert("Please upload an image first");
 return;
-
 }
 
-let wasteTypes=[
+if(detected){
+alert("Image already detected. Upload a new image.");
+return;
+}
+
+let wasteTypes = [
 "Plastic Waste",
 "Metal Waste",
 "Organic Waste",
 "Recyclable Waste"
 ];
 
-let result=wasteTypes[Math.floor(Math.random()*wasteTypes.length)];
+let result = wasteTypes[Math.floor(Math.random()*wasteTypes.length)];
 
-score+=10;
+score += 10;
 
-document.getElementById("result").innerText=
-"Detected: "+result;
+document.getElementById("result").innerText =
+"Detected: " + result;
 
-document.getElementById("score").innerText=
-"Points: "+score;
+document.getElementById("score").innerText =
+"Points: " + score;
+
+detected = true;
 
 }
