@@ -7,15 +7,31 @@
 
 <body>
 
-<h1>Smart Waste Segregation System</h1>
+<h1 class="title">Smart Waste Segregation System</h1>
 
+<div class="card-container">
+
+<div class="card">
+<h2>Upload Waste</h2>
 <input type="file" id="imageUpload">
-<br><br>
+</div>
 
-<button onclick="detectWaste()">Detect Waste</button>
+<div class="card">
+<h2>Detect Waste</h2>
+<button onclick="detectWaste()">Detect</button>
+</div>
 
-<h2 id="result"></h2>
-<h3>Score: <span id="score">0</span></h3>
+<div class="card">
+<h2>Result</h2>
+<p id="result">No waste detected</p>
+</div>
+
+<div class="card">
+<h2>Score</h2>
+<p id="score">0</p>
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
