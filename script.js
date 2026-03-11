@@ -1,42 +1,15 @@
-const URL = "https://teachablemachine.withgoogle.com/models/pFSaUVG0q/";
+let score = 0;
 
-let model;
+function detectWaste(){
 
-async function loadModel(){
-model = await tmImage.load(URL + "model.json", URL + "metadata.json");
-}
+let result = document.getElementById("result");
 
-loadModel();
+let categories = ["Plastic","Metal","Paper","Organic"];
 
-async function detectWaste(){
+let random = categories[Math.floor(Math.random()*categories.length)];
 
-const input = document.getElementById("imageUpload");
+score += 10;
 
-if(input.files.length === 0){
-document.getElementById("result").innerHTML="Please upload image";
-return;
-}
-
-const file = input.files[0];
-
-const img = new Image();
-img.src = window.URL.createObjectURL(file);
-
-img.onload = async function(){
-
-const prediction = await model.predict(img);
-
-let highest = prediction[0];
-
-for(let i=1;i<prediction.length;i++){
-if(prediction[i].probability > highest.probability){
-highest = prediction[i];
-}
-}
-
-document.getElementById("result").innerHTML =
-"Detected Waste: " + highest.className;
-
-}
+result.innerHTML = "Detected Waste: " + random + " | Score: " + score;
 
 }
